@@ -1,2 +1,2 @@
 # social-app
-mern stack with authentication (JWT)
+mern stack with authentication (JWT,OAuth)
