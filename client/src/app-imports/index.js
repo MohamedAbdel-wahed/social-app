@@ -1,0 +1,5 @@
+export { default as Header } from "../components/header/Header"
+export { default as Auth } from "../pages/Auth"
+export { default as Home } from "../pages/Home"
+export { default as Timeline } from "../pages/Timeline"
+export { default as NotFound } from "../pages/NotFound"

@@ -1,12 +1,21 @@
-import express from 'express'
-import {getPosts,createPost,editPost,removePost} from '../controllers/post.js'
+import express from "express"
 
-const router=  express.Router()
+import {
+  getPosts,
+  createPost,
+  editPost,
+  removePost,
+  likePost,
+} from "../controllers/post.js"
 
-router.get('/', getPosts)
-router.post('/', createPost)
-router.patch('/:id', editPost)
-router.delete('/:id', removePost)
+import authMiddleware from "../middleware/auth.js"
 
+const router = express.Router()
+
+router.get("/", getPosts)
+router.post("/", authMiddleware, createPost)
+router.patch("/:id", authMiddleware, editPost)
+router.delete("/:id", authMiddleware, removePost)
+router.patch("/:id/like", authMiddleware, likePost)
 
 export default router

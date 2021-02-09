@@ -12,10 +12,13 @@
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "formik": "^2.2.6",
+    "framer-motion": "^3.3.0",
+    "jwt-decode": "^3.1.2",
     "moment": "^2.29.1",
     "postcss": "^7.0.35",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-google-login": "^5.2.2",
     "react-icons": "^4.1.0",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
@@ -28,9 +31,9 @@
     "yup": "^0.32.8"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-dotenv && craco start",
+    "build": "react-dotenv && craco build",
+    "test": "react-dotenv && craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

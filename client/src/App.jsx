@@ -1,13 +1,8 @@
-import React from 'react'
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import React from "react"
+import { BrowserRouter, Switch } from "react-router-dom"
 
-import Header from './components/Header'
-import Home from './pages/Home'
-import Timeline from './pages/Timeline'
-import NotFound from './pages/NotFound'
-
-
-
+import ProtectedRoute from "./utils/ProtectedRoute"
+import { Header, Auth, Home, Timeline, NotFound } from "./app-imports"
 
 function App() {
   return (
@@ -15,9 +10,10 @@ function App() {
       <Header />
       <main>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/timeline" component={Timeline} />
-          <Route component={NotFound} />
+          <ProtectedRoute path="/auth" component={Auth} authForm />
+          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute path="/timeline" component={Timeline} timeline />
+          <ProtectedRoute component={NotFound} />
         </Switch>
       </main>
     </BrowserRouter>
